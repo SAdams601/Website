@@ -2,5 +2,4 @@
 title: Contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+Right now you can contact me at StephenAdams[DOT]Minn[AT]gmail.com

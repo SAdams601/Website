@@ -2,7 +2,7 @@
 title: Resolution, reflection, and repetition
 ---
 
-I'm not normally the sort of person who makes new year's resolutions. By not normally I mean that I've never made a new year's resolution before. In the past I felt that any major life changes could occur at any time and did not need to be "saved" for the arbitrary ticking over of the calendar.
+I'm not normally the sort of person who makes new year's resolutions. By not normally I mean that I've never made a new year's resolution before. <!--more-->In the past I felt that any major life changes could occur at any time and did not need to be "saved" for the arbitrary ticking over of the calendar.
 
 This year, however, it felt appropriate to set a bit of a challenge and a long term goal for myself. I'm currently in the process of finishing my PhD (I have my viva at the end of February) and after four years of being so focused on a single goal I feel a bit at loose ends so I'm setting myself the challenge of blogging once per week during 2018.
 
@@ -21,4 +21,5 @@ The third major goal is less well defined than the others but is perhaps the one
 I think this has been long enough for a first post. In the coming weeks I hope to continue to configure this Hakyll site so it is a bit more aesthetically pleasing. My first major project that I'm currently working is I'm working on learning some game theory. I've been interested in learning game theory for some time but haven't been able to give it enough attention until now. I'm reading John Conway's "On Numbers and Games" and I've enrolled onto [a Coursera course](https://www.coursera.org/learn/game-theory-1/home/welcome) on Game Theory as well. We'll see if I can continue to keep moving through both of these things but I hope one or the other will provide topics to write about soon.
 
 That's all for now
+
 Stephen

@@ -7,8 +7,8 @@ import           GHC.IO.Encoding
 --------------------------------------------------------------------------------
 main :: IO ()
 main = 
-    setLocaleEncoding utf8
-    hakyll $ do
+    let config = defaultConfiguration in
+    hakyllWith (defaultConfiguration {destinationDirectory = "docs"}) $ do
         match "images/*" $ do
             route   idRoute
             compile copyFileCompiler
@@ -27,6 +27,7 @@ main =
             route $ setExtension "html"
             compile $ pandocCompiler
                 >>= loadAndApplyTemplate "templates/post.html"    postCtx
+                >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
                 >>= relativizeUrls
     
@@ -49,13 +50,15 @@ main =
             route idRoute
             compile $ do
                 posts <- recentFirst =<< loadAll "posts/*"
+                postBody <- loadSnapshot (itemIdentifier $ head posts) "content"                              
                 let indexCtx =
                         listField "posts" postCtx (return posts) `mappend`
+                        constField "post" (itemBody postBody)    `mappend`
                         constField "title" "Home"                `mappend`
-                        defaultContext
-    
+                        defaultContext                
                 getResourceBody
                     >>= applyAsTemplate indexCtx
+                    >>= loadAndApplyTemplate "templates/recentPost.html" indexCtx
                     >>= loadAndApplyTemplate "templates/default.html" indexCtx
                     >>= relativizeUrls
     
