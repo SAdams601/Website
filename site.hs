@@ -22,10 +22,11 @@ main =
             compile $ pandocCompiler
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
-    
+        match "csl/*" $ compile cslCompiler
+        match "bib/*" $ compile biblioCompiler
         match "posts/*" $ do
             route $ setExtension "html"
-            compile $ pandocCompiler
+            compile $ bibtexCompiler "csl/elsevier-with-titles-alphabetical.csl" "bib/research.bib"
                 >>= loadAndApplyTemplate "templates/post.html"    postCtx
                 >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
