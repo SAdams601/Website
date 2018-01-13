@@ -26,7 +26,12 @@ main =
         match "bib/*" $ compile biblioCompiler
         match "posts/*" $ do
             route $ setExtension "html"
-            compile $ bibtexCompiler "csl/elsevier-with-titles-alphabetical.csl" "bib/research.bib"
+            compile $ pandocCompiler
+                >>= (\i -> do
+                    mBib <- getMetadataField (itemIdentifier i) "bib"
+                    case mBib of
+                        (Just bib) -> pandocBiblioCompiler "csl/elsevier-with-titles-alphabetical.csl" bib
+                        Nothing -> return i)
                 >>= loadAndApplyTemplate "templates/post.html"    postCtx
                 >>= saveSnapshot "content"
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
