@@ -17,7 +17,7 @@ Since the dependent type system was the most confusing part about using Agda so 
 
 I've also begun doing some reading on natural language processing. I've always had a passing interest in the field and NLP was mentioned as one of the applications of category theory so it has caught my eye properly again. I'm currently coming to grips with how the vector space model of word meaning works but in the future I want to checkout these two papers:
 
-* A Compositional Explanation of the 'Pet Fish' Phenomenon [@petFish]
-* Hierarchical conceptual spaces for concept combination [@lewisHierarchical]
+- A Compositional Explanation of the 'Pet Fish' Phenomenon [@petFish]
+- Hierarchical conceptual spaces for concept combination [@lewisHierarchical]
 
 Finally happy new year and hopefully this year contains more consistent blogging from me! 
